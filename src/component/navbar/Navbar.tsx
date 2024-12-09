@@ -7,7 +7,7 @@ const Navbar = (props: Props) => {
   const AboveMediumScreens = useMediaQuery("(min-width:1060px)");
   return (
     <>
-      <nav className="w-full h-full py-6 text-primary text-xl shadow-lg  ">
+      <nav className="w-full h-full py-6 text-primary text-xl shadow-lg top-0 fixed z-30">
         <div className="w-5/6 mx-auto flex justify-between gap-16">
           {/* logo */}
           <h1 className="text-2xl font-bold">TopUpify</h1>

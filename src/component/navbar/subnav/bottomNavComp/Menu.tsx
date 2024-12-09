@@ -20,7 +20,7 @@ const Menu = (props: Props) => {
 
       {HamToogle ? (
         <>
-          <div className="fixed left-[60%] top-0 bottom-0 right-0 bg-primary">
+          <div className="fixed left-[60%] top-0 bottom-0 right-0 bg-primary z-20">
             <div className="w-4/5 mx-auto mt-8">
               <div className="flex justify-end  ">
                 <div

@@ -6,6 +6,7 @@ import useMediaQuery from "../shared/mediaquery";
 import BottonNav from "../component/navbar/BottonNav";
 import Imageslider from "../carousel/imageslider";
 import { useState } from "react";
+import GamesSlider from "../carousel/GamesSlider";
 
 type Props = {};
 
@@ -31,6 +32,8 @@ const Home = (props: Props) => {
       <Navbar />
 
       <Imageslider />
+
+      <GamesSlider />
 
       {!AboveMediumScreens ? <BottonNav /> : null}
     </div>

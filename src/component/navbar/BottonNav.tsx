@@ -2,10 +2,8 @@ import { AiFillHome } from "react-icons/ai";
 import { FaCartShopping } from "react-icons/fa6";
 
 import { CiUser } from "react-icons/ci";
-import { GiHamburgerMenu } from "react-icons/gi";
 
 import Bottomnavdec from "./subnav/Bottomnavdec";
-import { useState } from "react";
 import Menu from "./subnav/bottomNavComp/Menu";
 
 type Props = {};

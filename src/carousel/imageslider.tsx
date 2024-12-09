@@ -2,11 +2,7 @@ import pubgimg from "../../public/images/pubg.jpg";
 import codimg from "../../public/images/cod.jpg";
 import ffimg from "../../public/images/ff.jpg";
 
-import {
-  MdOutlineChevronLeft,
-  MdOutlineChevronRight,
-  MdOutlineChevronright,
-} from "react-icons/md";
+import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
 import { useState } from "react";
 
 type Props = {};
@@ -28,13 +24,13 @@ const Imageslider = (props: Props) => {
   };
   console.log(indexvalue);
   return (
-    <div className="w-full h-full mt-8   ">
+    <div className="w-full h-full my-32   ">
       <div className="w-5/6 h-full mx-auto flex relative overflow-hidden md:w-10/12 lg:w-9/12 xl:w-7/12 z-0 ">
         <div
           className="w-full mx-auto flex "
           style={{ transform: `translateX(-${100 * indexvalue}%)` }}
         >
-          {imageArr.map((img) => {
+          {imageArr.map((img, i) => {
             return (
               //   <div key={img.img}>
               <img
