@@ -3,9 +3,44 @@ import codimg from "../../public/images/cod.jpg";
 import ffimg from "../../public/images/ff.jpg";
 
 import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
-import { useState } from "react";
+// import { useState } from "react";
+
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Pagination, Autoplay, Navigation } from "swiper/modules";
+// import "swiper/css";
+// import "swiper/css/pagination";
+// import "swiper/css/autoplay";
+// import "swiper/css/navigation";
+import "swiper/swiper-bundle.css"; // all will be imported?
 
 type Props = {};
+
+const SliderMethod = () => {
+  const swiper = useSwiper();
+
+  return (
+    <>
+      <div className="flex w-full  justify-end gap-4">
+        <div
+          className="p-3 bg-white"
+          onClick={() => {
+            swiper.slidePrev();
+          }}
+        >
+          <MdOutlineChevronLeft />
+        </div>
+        <div
+          className="p-3 bg-white"
+          onClick={() => {
+            swiper.slideNext();
+          }}
+        >
+          <MdOutlineChevronRight />
+        </div>
+      </div>
+    </>
+  );
+};
 
 const Imageslider = (props: Props) => {
   const imageArr = [
@@ -13,48 +48,40 @@ const Imageslider = (props: Props) => {
     { img: codimg, alt: "codimg" },
     { img: ffimg, alt: "ffimg" },
   ];
-  const [indexvalue, setindexvalue] = useState<number>(0);
-  const RightClick = () => {
-    if (indexvalue === imageArr.length - 1) setindexvalue(0);
-    else setindexvalue(indexvalue + 1);
-  };
-  const LeftClick = () => {
-    if (indexvalue === 0) setindexvalue(imageArr.length - 1);
-    else setindexvalue(indexvalue - 1);
-  };
-  console.log(indexvalue);
+
   return (
-    <div className="w-full h-full my-32   ">
-      <div className="w-5/6 h-full mx-auto flex relative overflow-hidden md:w-10/12 lg:w-9/12 xl:w-7/12 z-0 ">
-        <div
-          className="w-full mx-auto flex "
-          style={{ transform: `translateX(-${100 * indexvalue}%)` }}
+    <div className="w-full h-full pt-32 ">
+      <div className="w-4/5 mx-auto h-[60vh]">
+        <Swiper
+          modules={[Pagination, Autoplay, Navigation]}
+          spaceBetween={50}
+          slidesPerView={1}
+          onSlideChange={() => console.log("slide change")}
+          onSwiper={(swiper) => console.log(swiper)}
+          pagination={{ clickable: true }}
+          autoplay={{ delay: 3000, disableOnInteraction: false }}
+          speed={1500}
+          loop={true} //loops
+          // navigation={true}
+          className="relative py-6 h-full rounded-lg"
         >
-          {imageArr.map((img, i) => {
+          <div className="top-3  absolute left-0 w-full z-10">
+            <SliderMethod />
+          </div>
+
+          {imageArr.map((images) => {
             return (
-              //   <div key={img.img}>
-              <img
-                key={img.img}
-                src={img.img}
-                className="w-full rounded-2xl "
-                alt="img.alt"
-              ></img>
-              //   </div>
+              <SwiperSlide className="my-10">
+                <img
+                  src={images.img}
+                  alt={images.alt}
+                  key={images.alt}
+                  className="rounded-lg  w-full "
+                ></img>
+              </SwiperSlide>
             );
           })}
-        </div>
-        <div className="absolute flex top-[50%] w-full justify-between ">
-          <MdOutlineChevronLeft
-            className="text-black bg-white rounded-full"
-            size={30}
-            onClick={LeftClick}
-          />
-          <MdOutlineChevronRight
-            onClick={RightClick}
-            className="text-black bg-white rounded-full "
-            size={30}
-          />
-        </div>
+        </Swiper>
       </div>
     </div>
   );

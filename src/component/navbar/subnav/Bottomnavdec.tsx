@@ -5,7 +5,7 @@ type Props = {
 };
 
 const Bottomnavdec = ({ children }: Props) => {
-  return <div className="text-primary text-2xl pb-5">{children}</div>;
+  return <div className="text-terinary text-2xl pb-5">{children}</div>;
 };
 
 export default Bottomnavdec;

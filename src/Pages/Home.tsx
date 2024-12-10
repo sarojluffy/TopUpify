@@ -28,7 +28,7 @@ const Home = (props: Props) => {
   //   };
 
   return (
-    <div>
+    <div className="bg-radial-gradient from-primary  ">
       <Navbar />
 
       <Imageslider />

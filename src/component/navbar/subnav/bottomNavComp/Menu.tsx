@@ -20,7 +20,7 @@ const Menu = (props: Props) => {
 
       {HamToogle ? (
         <>
-          <div className="fixed left-[60%] top-0 bottom-0 right-0 bg-primary z-20">
+          <div className="fixed left-[60%] top-0 bottom-0 right-0 bg-secondary z-30">
             <div className="w-4/5 mx-auto mt-8">
               <div className="flex justify-end  ">
                 <div
@@ -32,7 +32,7 @@ const Menu = (props: Props) => {
                   <ImCross size={18} className="text-primary" />
                 </div>
               </div>
-              <div className="text-secondary flex flex-col gap-16 mt-12 text-lg font-bold">
+              <div className="text-terinary flex flex-col gap-16 mt-12 text-lg font-bold">
                 <div className="cursor-pointer"> Top Up</div>
                 <div>Gift card</div>
                 <div>Subscriptions</div>

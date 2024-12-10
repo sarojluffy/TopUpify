@@ -6,7 +6,7 @@ type Props = {
 
 const Searchpage = ({ searchpage, setsearchpage }: Props) => {
   return (
-    <div className="fixed opacity-95 inset-0  bg-primary z-10">
+    <div className="fixed opacity-95 inset-0  bg-primary z-30 ">
       <div
         className="text-white"
         onClick={() => {

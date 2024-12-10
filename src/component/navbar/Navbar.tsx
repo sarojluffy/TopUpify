@@ -7,8 +7,9 @@ const Navbar = (props: Props) => {
   const AboveMediumScreens = useMediaQuery("(min-width:1060px)");
   return (
     <>
-      <nav className="w-full h-full py-6 text-primary text-xl shadow-lg top-0 fixed z-30">
-        <div className="w-5/6 mx-auto flex justify-between gap-16">
+      <nav className="w-full py-6 text-terinary text-md shadow-sm shadow-primary top-0 fixed z-10 bg-secondary  bg-opacity-95 ">
+        {/* z-30 */}
+        <div className="w-5/6 mx-auto flex justify-between gap-16 items-center">
           {/* logo */}
           <h1 className="text-2xl font-bold">TopUpify</h1>
 
@@ -20,7 +21,7 @@ const Navbar = (props: Props) => {
               <div className="flex w-full justify-between">
                 {/* navitems  */}
 
-                <div className="flex w-full gap-14">
+                <div className="flex w-full gap-10">
                   {" "}
                   <div className="cursor-pointer"> Top Up</div>
                   <div>Gift card</div>

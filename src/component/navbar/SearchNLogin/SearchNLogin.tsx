@@ -7,7 +7,7 @@ const SearchNLogin = () => {
   const [searchpage, setsearchpage] = useState<boolean>(false);
   return (
     <div className="flex items-center gap-6 ">
-      <div className="text-primary">
+      <div className="text-terinery">
         <BsSearch
           onClick={() => {
             setsearchpage(!searchpage);

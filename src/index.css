@@ -11,6 +11,7 @@ body,
   height: 100%;
   width: 100%;
   font-family: "Montserrat", serif;
-  background-color: #f5fefd;
+  background-color: #1f2833;
+  /* background-color: linear-gradient(to right, #6366f1, #a855f7, #ec4899); */
   /* @apply text-gray-500;  */
 }
