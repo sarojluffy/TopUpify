@@ -7,6 +7,7 @@ import BottonNav from "../component/navbar/BottonNav";
 import Imageslider from "../carousel/imageslider";
 import { useState } from "react";
 import GamesSlider from "../carousel/GamesSlider";
+import Giftcard from "../carousel/Giftcard";
 
 type Props = {};
 
@@ -34,6 +35,7 @@ const Home = (props: Props) => {
       <Imageslider />
 
       <GamesSlider />
+      <Giftcard />
 
       {!AboveMediumScreens ? <BottonNav /> : null}
     </div>
