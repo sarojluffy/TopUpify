@@ -28,7 +28,7 @@ const Register = () => {
       );
 
       alert("registered successfully");
-      console.log(userCredential);
+      // console.log(userCredential);
       navigate("/login");
     } catch (error) {
       if (error instanceof FirebaseError) {

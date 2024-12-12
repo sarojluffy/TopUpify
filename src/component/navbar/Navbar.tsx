@@ -1,9 +1,7 @@
 import useMediaQuery from "../../shared/mediaquery";
-import { BsSearch } from "react-icons/bs";
 import SearchNLogin from "./SearchNLogin/SearchNLogin";
-type Props = {};
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
   const AboveMediumScreens = useMediaQuery("(min-width:1060px)");
   return (
     <>
@@ -11,7 +9,9 @@ const Navbar = (props: Props) => {
         {/* z-30 */}
         <div className="w-5/6 mx-auto flex justify-between gap-16 items-center">
           {/* logo */}
-          <h1 className="text-2xl font-bold">TopUpify</h1>
+          <h1 className="text-3xl   font-bold drop-shadow-lg text-terinary ">
+            TopUpify
+          </h1>
 
           {/* nav items and login */}
 

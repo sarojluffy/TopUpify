@@ -21,7 +21,7 @@ const RouteSS = (props: Props) => {
         setUsers(null);
       }
     });
-    console.log(userS);
+    // console.log(userS);
   });
   return (
     <Routes>

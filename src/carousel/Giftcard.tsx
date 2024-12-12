@@ -1,58 +1,10 @@
-import amzon from "/giftcards/amzon (1).jpg";
-import google from "/giftcards/googlecardart (1).png";
-import itunes from "/giftcards/ituens-card (1).jpg";
-import playst from "/giftcards/spotify.jpeg";
-import steam from "/giftcards/steam.jpeg";
-import xbox from "/giftcards/xbox.jpeg";
-
 import { Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { useSwiper } from "swiper/react";
-import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
 import { SliderMethod } from "./GamesSlider";
-
-const buttonstyl = "p-3 bg-terinary rounded-full text-primary cursor-pointer";
-
-type Props = {
-  src: string;
-  alt: string;
-  card: string;
-};
+import { GiftArray } from "../shared/Data";
+// const buttonstyl = "p-3 bg-terinary rounded-full text-primary cursor-pointer";
 
 const Giftcard = () => {
-  const GiftArray: Props[] = [
-    {
-      src: amzon,
-      alt: "amzon",
-      card: "Amazon GiftCard",
-    },
-    {
-      src: google,
-      alt: "google",
-      card: "google GiftCard",
-    },
-    {
-      src: itunes,
-      alt: "itunes",
-      card: "Itunes",
-    },
-    {
-      src: playst,
-      alt: "playst",
-      card: "Playstation GiftCard",
-    },
-    {
-      src: steam,
-      alt: "steam",
-      card: "Steam",
-    },
-    {
-      src: xbox,
-      alt: "xbox",
-      card: "Xbox GiftCard",
-    },
-  ];
-
   return (
     <>
       <div className="w-full h-full py-8 relative z-0">
@@ -73,8 +25,8 @@ const Giftcard = () => {
               1024: { slidesPerView: 4, spaceBetween: 30 },
             }}
             loop={true}
-            onReachBeginning={() => console.log("Reached the beginning")}
-            onReachEnd={() => console.log("Reached the end")}
+            // onReachBeginning={() => console.log("Reached the beginning")}
+            // onReachEnd={() => console.log("Reached the end")}
           >
             <div className="absolute top-0 right-0 z-10 w-full">
               <SliderMethod>Giftcard</SliderMethod>
@@ -87,7 +39,7 @@ const Giftcard = () => {
               >
                 <img src={slider.src} alt={slider.alt} className="rounded-md" />
                 <p className="text-center py-2 text-terinary bg-primary rounded-b-md">
-                  {slider.card}
+                  {slider.name}
                 </p>
               </SwiperSlide>
             ))}

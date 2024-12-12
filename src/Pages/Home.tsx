@@ -1,13 +1,15 @@
 import { authh } from "../Firebase/firebase";
 import { signOut } from "firebase/auth";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Navbar from "../component/navbar/Navbar";
 import useMediaQuery from "../shared/mediaquery";
 import BottonNav from "../component/navbar/BottonNav";
 import Imageslider from "../carousel/imageslider";
-import { useState } from "react";
 import GamesSlider from "../carousel/GamesSlider";
 import Giftcard from "../carousel/Giftcard";
+import { RootState } from "../shared/Redux/store";
+import { useSelector } from "react-redux";
 
 type Props = {};
 
@@ -16,6 +18,21 @@ const Home = (props: Props) => {
 
   const navigate = useNavigate();
   const aboveSmallScreen = useMediaQuery("(min-width:540px)");
+
+  const BgReduxVal = useSelector((state: RootState) => state.Bgscroll.value);
+
+  // const BgReduxBool = BgReduxVal && "overflow-hidden";
+
+  useEffect(() => {
+    // BgReduxVal && document.body.classList.add("overflow-hidden");
+    if (BgReduxVal) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+  });
+
+  // const count = useSelector((state: RootState) => state.counter.value)
 
   //   const SignO = async () => {
   //     try {
@@ -29,7 +46,7 @@ const Home = (props: Props) => {
   //   };
 
   return (
-    <div className="bg-radial-gradient from-primary  ">
+    <div className={`bg-radial-gradient from-primary overflow-hidden `}>
       <Navbar />
 
       <Imageslider />
