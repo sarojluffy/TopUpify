@@ -16,7 +16,11 @@ const Searchpage = ({ searchpage, setsearchpage }: Props) => {
   // const [searchtext,setsearchtext]= useState("")
   const [inputfielddtaa, setinputfielddtaa] = useState<string>("");
 
-  const SubmitData = (e) => {
+  const SubmitData = (
+    e:
+      | React.FormEvent<HTMLFormElement>
+      | React.MouseEvent<SVGElement, MouseEvent>
+  ) => {
     e.preventDefault();
     console.log("submitted");
     dispatch(searchedArray(inputfielddtaa));
@@ -27,11 +31,29 @@ const Searchpage = ({ searchpage, setsearchpage }: Props) => {
   );
   const DisplayArraydata =
     searchedselectorData.length === 0 ? selectorData : searchedselectorData;
+
+  console.log(DisplayArraydata);
+
   const dispatch = useDispatch();
 
   useEffect(() => {
     dispatch(initialArray(CombinedData));
   });
+  // useEffect(() => {
+  //   dispatch(searchedArray(inputfielddtaa));
+  // }, [inputfielddtaa]);
+
+  useEffect(() => {
+    const timeoutId = setTimeout(() => {
+      console.log("Dispatching search query:", inputfielddtaa);
+      dispatch(searchedArray(inputfielddtaa));
+    }, 1000); // Debounce timeout of 300ms
+
+    return () => {
+      // Clear timeout when the component unmounts or before the effect re-runs
+      clearTimeout(timeoutId);
+    };
+  }, [inputfielddtaa, dispatch]);
 
   return (
     <div className="fixed  inset-0  bg-primary z-30 overflow-auto w-full  py-32">
@@ -62,17 +84,25 @@ const Searchpage = ({ searchpage, setsearchpage }: Props) => {
           </div>
         </div>
 
-        <div className="grid grid-cols-2   gap-6 w-4/5 mx-auto pt-16">
-          {DisplayArraydata.map((abc) => {
-            return (
-              <>
-                <div className="">
-                  <img src={abc.src}></img>
-                  <p>{abc.name}</p>
-                </div>
-              </>
-            );
-          })}
+        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-6 w-4/5 mx-auto pt-16 place-items-center">
+          {searchedselectorData.length === 0 && inputfielddtaa ? (
+            <>
+              <div>notfound</div>
+            </>
+          ) : (
+            <>
+              {DisplayArraydata.map((abc) => {
+                return (
+                  <>
+                    <div className="border-b-[1px] border-terinary w-2/4 rounded-lg flex whitespace-nowrap gap-4">
+                      <img className="rounded-lg" src={abc.src}></img>
+                      <p className="text-end">{abc.name}</p>
+                    </div>
+                  </>
+                );
+              })}
+            </>
+          )}
         </div>
       </div>
     </div>
