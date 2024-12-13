@@ -1,8 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
 import bgScrl from "./slices/BgScroll";
+import arrsearch from "./slices/SearchSlice";
 export const store = configureStore({
   reducer: {
     Bgscroll: bgScrl,
+    search: arrsearch,
   },
 });
 
