@@ -7,11 +7,19 @@ import { useEffect, useState } from "react";
 import { authh } from "../Firebase/firebase";
 import { User } from "firebase/auth";
 import Notfound from "../component/Notfound";
+import Cart from "../Pages/Cart";
+import Description from "../Pages/description";
 
-type Props = {};
+type Props = {
+  src: string;
+  alt: string;
+  name: string;
+};
 
 const RouteSS = (props: Props) => {
   const [userS, setUsers] = useState<User | null>();
+
+  const [selecteditem, setselecteditem] = useState<Props>();
 
   useEffect(() => {
     authh.onAuthStateChanged((user) => {
@@ -34,6 +42,9 @@ const RouteSS = (props: Props) => {
       <Route path="/register" element={<Register />}></Route>
       <Route path="/home" element={userS ? <Home /> : <Login />}></Route>
       <Route path="*" element={<Notfound />}></Route>
+
+      <Route path="/cart" element={<Cart />}></Route>
+      <Route path="/description" element={<Description />}></Route>
     </Routes>
   );
 };

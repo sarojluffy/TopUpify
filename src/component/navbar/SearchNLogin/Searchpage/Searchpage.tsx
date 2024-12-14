@@ -32,7 +32,7 @@ const Searchpage = ({ searchpage, setsearchpage }: Props) => {
   const DisplayArraydata =
     searchedselectorData.length === 0 ? selectorData : searchedselectorData;
 
-  console.log(DisplayArraydata);
+  // console.log(DisplayArraydata);
 
   const dispatch = useDispatch();
 
@@ -42,12 +42,13 @@ const Searchpage = ({ searchpage, setsearchpage }: Props) => {
   // useEffect(() => {
   //   dispatch(searchedArray(inputfielddtaa));
   // }, [inputfielddtaa]);
-
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      console.log("Dispatching search query:", inputfielddtaa);
+      // console.log("Dispatching search query:", inputfielddtaa);
       dispatch(searchedArray(inputfielddtaa));
-    }, 1000); // Debounce timeout of 300ms
+    }, 600); // Debounce timeout of 300ms
+
+    console.log("done");
 
     return () => {
       // Clear timeout when the component unmounts or before the effect re-runs
@@ -84,7 +85,7 @@ const Searchpage = ({ searchpage, setsearchpage }: Props) => {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 sm:grid-cols-1 gap-6 w-4/5 mx-auto pt-16 place-items-center">
+        <div className="grid md:grid-cols-3 sm:grid-cols-2  w-4/5 mx-auto pt-16 place-items-center">
           {searchedselectorData.length === 0 && inputfielddtaa ? (
             <>
               <div>notfound</div>
@@ -94,9 +95,11 @@ const Searchpage = ({ searchpage, setsearchpage }: Props) => {
               {DisplayArraydata.map((abc) => {
                 return (
                   <>
-                    <div className="border-b-[1px] border-terinary w-2/4 rounded-lg flex whitespace-nowrap gap-4">
-                      <img className="rounded-lg" src={abc.src}></img>
-                      <p className="text-end">{abc.name}</p>
+                    <div className="w-full  border-primary border-[1px] hover:border-[1px] hover:border-terinary hover:border-opacity-50">
+                      <div className=" w-3/4 pl-4 pt-4 ">
+                        <img className="" src={abc.src}></img>
+                        <p className="text-center py-2">{abc.name}</p>
+                      </div>
                     </div>
                   </>
                 );
