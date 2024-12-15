@@ -9,6 +9,7 @@ import { Pagination, Autoplay, Navigation } from "swiper/modules";
 // import "swiper/css/navigation";
 import "swiper/swiper-bundle.css"; // all will be imported?
 import "swiper/css/autoplay";
+import { Link } from "react-router-dom";
 
 const Imageslider = () => {
   return (
@@ -30,12 +31,14 @@ const Imageslider = () => {
           {imageArr.map((images) => {
             return (
               <SwiperSlide className="my-16">
-                <img
-                  src={images.src}
-                  alt={images.alt}
-                  key={images.name}
-                  className="rounded-lg  w-full "
-                ></img>
+                <Link to="/description">
+                  <img
+                    src={images.src}
+                    alt={images.alt}
+                    key={images.name}
+                    className="rounded-lg  w-full "
+                  ></img>
+                </Link>
               </SwiperSlide>
             );
           })}

@@ -10,6 +10,7 @@ import { gameslider } from "../shared/Data";
 // import "swiper/css/autoplay";
 
 import { MdOutlineChevronLeft, MdOutlineChevronRight } from "react-icons/md";
+import { Link } from "react-router-dom";
 // import CarauselButtons from "../shared/CarauselButtons";
 
 interface Childrn {
@@ -92,10 +93,17 @@ const GamesSlider = () => {
                 key={i}
                 className="my-20 bg-red-200 shadow-sm shadow-terinary"
               >
-                <img src={slider.src} alt={slider.alt} className="rounded-md" />
-                <p className="text-center py-2 text-terinary bg-primary rounded-b-md">
-                  {slider.name}
-                </p>
+                <Link to={`/description/${slider.id}`}>
+                  <img
+                    src={slider.src}
+                    alt={slider.alt}
+                    className="rounded-md"
+                  />
+                  <p className="text-center py-2 text-terinary bg-primary rounded-b-md">
+                    {slider.name}
+                  </p>
+                  <p>{slider.id}</p>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>

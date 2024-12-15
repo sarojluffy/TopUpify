@@ -19,29 +19,30 @@ type Props = {
   src: string;
   alt: string;
   name: string;
+  id: string;
 };
 export const gameslider: Props[] = [
-  { src: brawl, alt: "brawl", name: "Brawlstars" },
-  { src: coc, alt: "coc", name: "Clash of clans" },
-  { src: cod, alt: "cod", name: "Call of duty" },
-  { src: EF, alt: "EF", name: "Efootball" },
-  { src: FC, alt: "FC", name: "FC mobile" },
-  { src: ml, alt: "ml", name: "Mobile legends" },
-  { src: pubgl, alt: "pubgl", name: "Pubglite" },
+  { src: brawl, alt: "brawl", name: "Brawlstars", id: "1" },
+  { src: coc, alt: "coc", name: "Clash of clans", id: "2" },
+  { src: cod, alt: "cod", name: "Call of duty", id: "3" },
+  { src: EF, alt: "EF", name: "Efootball", id: "4" },
+  { src: FC, alt: "FC", name: "FC mobile", id: "5" },
+  { src: ml, alt: "ml", name: "Mobile legends", id: "6" },
+  { src: pubgl, alt: "pubgl", name: "Pubglite", id: "7" },
 ];
 
 export const imageArr: Props[] = [
-  { src: pubgimg, alt: "pubgimage", name: "pubg" },
-  { src: codimg, alt: "codimg", name: "Call of duty" },
-  { src: ffimg, alt: "ffimg", name: "freefire" },
+  { src: pubgimg, alt: "pubgimage", name: "pubg", id: "8" },
+  { src: codimg, alt: "codimg", name: "Call of duty", id: "9" },
+  { src: ffimg, alt: "ffimg", name: "freefire", id: "10" },
 ];
 export const GiftArray: Props[] = [
-  { src: amzon, alt: "amzon", name: "Amazon GiftCard" },
-  { src: google, alt: "google", name: "google GiftCard" },
-  { src: itunes, alt: "itunes", name: "Itunes" },
-  { src: playst, alt: "playst", name: "Playstation GiftCard" },
-  { src: steam, alt: "steam", name: "Steam" },
-  { src: xbox, alt: "xbox", name: "Xbox GiftCard" },
+  { src: amzon, alt: "amzon", name: "Amazon GiftCard", id: "11" },
+  { src: google, alt: "google", name: "google GiftCard", id: "12" },
+  { src: itunes, alt: "itunes", name: "Itunes", id: "13" },
+  { src: playst, alt: "playst", name: "Playstation GiftCard", id: "14" },
+  { src: steam, alt: "steam", name: "Steam", id: "15" },
+  { src: xbox, alt: "xbox", name: "Xbox GiftCard", id: "16" },
 ];
 
 export const CombinedData: Props[] = [...gameslider, ...GiftArray];

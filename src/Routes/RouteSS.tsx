@@ -44,7 +44,7 @@ const RouteSS = (props: Props) => {
       <Route path="*" element={<Notfound />}></Route>
 
       <Route path="/cart" element={<Cart />}></Route>
-      <Route path="/description" element={<Description />}></Route>
+      <Route path="/description/:id" element={<Description />}></Route>
     </Routes>
   );
 };

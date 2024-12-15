@@ -2,6 +2,7 @@ import { Pagination, Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { SliderMethod } from "./GamesSlider";
 import { GiftArray } from "../shared/Data";
+import { Link } from "react-router-dom";
 // const buttonstyl = "p-3 bg-terinary rounded-full text-primary cursor-pointer";
 
 const Giftcard = () => {
@@ -37,10 +38,16 @@ const Giftcard = () => {
                 key={i}
                 className="my-20 bg-red-200 shadow-sm shadow-terinary"
               >
-                <img src={slider.src} alt={slider.alt} className="rounded-md" />
-                <p className="text-center py-2 text-terinary bg-primary rounded-b-md">
-                  {slider.name}
-                </p>
+                <Link to={`/description/${slider.id}`}>
+                  <img
+                    src={slider.src}
+                    alt={slider.alt}
+                    className="rounded-md"
+                  />
+                  <p className="text-center py-2 text-terinary bg-primary rounded-b-md">
+                    {slider.name}
+                  </p>
+                </Link>
               </SwiperSlide>
             ))}
           </Swiper>
